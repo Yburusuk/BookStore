@@ -47,10 +47,6 @@ public class ErrorHandlerMiddleware
             // Handle other unhandled exceptions
             // Log the exception for debugging purposes.
             Console.WriteLine($"Unhandled Exception: {ex}");
-
-            // Customize the error response as needed.
-            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await context.Response.WriteAsJsonAsync(new ApiResponse<object>("An error occurred while processing your request."));
         }
     }
 }
